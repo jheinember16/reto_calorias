@@ -8,7 +8,6 @@ formularioCalculadora.addEventListener("submit", (evento) => {
 
 function calcularCalorias() {
   aparecerResultado();
-
   const nombre = document.querySelector("#nombre");
   const tipodocumento = document.querySelector("#tipodocumento");
   const documento = document.querySelector("#documento");
@@ -25,29 +24,22 @@ function calcularCalorias() {
     edad: 5,
   };
 
-  if (
-    !(
-      nombre.value &&
-      tipodocumento.value &&
-      documento.value &&
-      edad.value &&
-      peso.value &&
-      altura.value
-    )
-  ) {
+  if (!(nombre.value && documento.value && edad.value && peso.value && altura.value)) {
     mostrarMensajeDeError("Por favor asegúrese de llenar todos los campos");
     return;
-  } else if (edad.value < 15 || edad.value > 80) {
+  } else 
+      if (edad.value < 15 ) {
     mostrarMensajeDeError("La edad ingresada no es permitida");
     return;
   }
+
   let grupoPoblacional;
   if (edad.value >= 15 && edad.value <= 29) {
-    grupoPoblacional = "Joven";
+    grupoPoblacional = "JOVEN";
   } else 
         if (edad.value >= 30 && edad.value <= 59) {
-    grupoPoblacional = "Adultos";
-  } else if(edad.value > 60){ grupoPoblacional = "Adultos Mayores"}
+    grupoPoblacional = "ADULTOS";
+  } else if(edad.value > 60){ grupoPoblacional = "ADULTOS MAYORES"}
     
 
   let calculoCalorias;
@@ -73,26 +65,31 @@ function calcularCalorias() {
 
   resultado.innerHTML = 
   `
-      <div class="card-body d-flex flex-column justify-content-center align-items-center h-100" id="calculo">
-        <h5 class="card-title h2">Calorías requeridas</h5>
-        <div class="mb-0 w-100" style="width:200vh">
-            <input class="m-1 form-control text-left " 
-            value="El paciente ${nombre.value} identificado con ${tipodocumento.value}"                        
-            style=" font-size:1rem; height: 100px; width: 420px; border-radius: 45% " disabled>          
-          
-            <input class="m-1 mt-2 form-control text-justify"
-            value="NO. ${documento.value},requiere un total de ${Math.floor(calculoCalorias)} kcal"
-            style="font-size:1rem; height: 150px; width: 420px; border-radius: 45% " disabled>
-          
-            <input class="m-1 mt-2 form-control text-justify"
-            value="para el sostenimiento de su TBM tasa metabólica basal"
-            style="font-size:1rem; height: 150px; width: 420px; border-radius: 45% " disabled>
-          
-            <input class="m-1 mt-2 form-control text-justify"
-            value="El paciente pertenece al grupo poblacional ${grupoPoblacional}"
-            style="font-size:1rem; height: 150px; width: 420px; border-radius: 45% " disabled>            
-        </div>
+    <div class="card-body d-flex flex-column justify-content-center align-items-center h-100" id="calculo">
+      <h5 class="card-title h2">Calorías requeridas</h5>
+      <div class="mb-0 w-100" style="width:250vh">
+          <input class="fw-bold card-title m-1 form-control text- " 
+          value="✔El paciente ${nombre.value}identificado con ${tipodocumento.value}"                        
+          style="font-size:1rem; height: 100px; width: 500px; 
+          border: none; 
+          border-radius: 40px 10px;" disabled>          
+        
+          <input class="fw-bold card-title m-1 mt-3 form-control text-left"
+          value="✔NO. ${documento.value}, requiere un total de ${Math.floor(calculoCalorias)} KCAL"
+          style="font-size:1rem; height: 100px; width: 500px; border: none; 
+          border-radius: 40px 10px;" disabled>
+        
+          <input class="fw-bold m-1 mt-3 form-control text-left"
+          value="✔Para el sostenimiento de su TBM tasa metabólica basal"
+          style="font-size:1rem; height: 100px; width: 500px;border: none; 
+          border-radius: 40px 10px;" disabled>
+        
+          <input class="fw-bold m-1 mt-3 form-control text-left"
+          value="✔El paciente pertenece al grupo poblacional ${grupoPoblacional}"
+          style="font-size:1rem; height: 100px; width: 500px; border: none; 
+          border-radius: 40px 10px; " disabled>            
       </div>
+    </div> 
   `;
 
   nombre.value = null;
