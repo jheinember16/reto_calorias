@@ -67,26 +67,26 @@ function calcularCalorias() {
   `
     <div class="card-body d-flex flex-column justify-content-center align-items-center h-100" id="calculo">
       <h5 class="card-title h2">Calorías requeridas</h5>
-      <div class="mb-0 w-100" style="width:250vh">
-          <input class="fw-bold card-title m-1 form-control text- " 
+      <div class="mb-0 justify-content-center w-100 " style="width:250vh">
+          <input class="fw-bold card-title justify-content-center align-items-center m-1 form-control text-center " 
           value="✔El paciente ${nombre.value}identificado con ${tipodocumento.value}"                        
-          style="font-size:1rem; height: 100px; width: 500px; 
+          style="font-size:1rem; height: 100px; width: 530px; 
           border: none; 
           border-radius: 40px 10px;" disabled>          
         
-          <input class="fw-bold card-title m-1 mt-3 form-control text-left"
+          <input class="fw-bold card-title ms-0 mt-3 form-control text-center"
           value="✔NO. ${documento.value}, requiere un total de ${Math.floor(calculoCalorias)} KCAL"
-          style="font-size:1rem; height: 100px; width: 500px; border: none; 
+          style="font-size:1rem; height: 100px; width: 530px; border: none; 
           border-radius: 40px 10px;" disabled>
         
-          <input class="fw-bold m-1 mt-3 form-control text-left"
+          <input class="fw-bold m-1 mt-3 form-control text-center"
           value="✔Para el sostenimiento de su TBM tasa metabólica basal"
-          style="font-size:1rem; height: 100px; width: 500px;border: none; 
+          style="font-size:1rem; height: 100px; width: 530px;border: none; 
           border-radius: 40px 10px;" disabled>
         
-          <input class="fw-bold m-1 mt-3 form-control text-left"
+          <input class="fw-bold m-1 mt-3 form-control text-center"
           value="✔El paciente pertenece al grupo poblacional ${grupoPoblacional}"
-          style="font-size:1rem; height: 100px; width: 500px; border: none; 
+          style="font-size:1rem; height: 100px; width: 530px; border: none; 
           border-radius: 40px 10px; " disabled>            
       </div>
     </div> 
